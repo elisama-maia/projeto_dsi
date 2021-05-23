@@ -4,9 +4,9 @@ server:
 spring:
     datasource:
         platform: postgres
-        url: jdbc:postgresql://ec2-18-214-140-149.compute-1.amazonaws.com:5432/dbfrcph2ninuaf
-        username: zhtxxbeqwsgkxm
-        password: 93a02620fca1d4d85a9f392696d2fc7792ef62695ee96f3b40a93bd6103d0aef
+        url: jdbc:postgresql:
+        username: 
+        password: 
         driverClassName: org.postgresql.Driver
         initialization-mode: always
         initialize: true
