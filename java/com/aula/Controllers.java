@@ -11,18 +11,8 @@ public class Controllers {
 		return "index";
 	}
 	
-	@GetMapping("/projetos")
-	public String projetos() {
-		return "projetos";
-	}
-	
-	@GetMapping("/empregados")
+	@GetMapping("/gerenciar")
 	public String empregados() {
-		return "empregados";
-	}
-	
-	@GetMapping("/tarefas")
-	public String tarefas() {
-		return "tarefas";
+		return "gerenciar";
 	}
 }
