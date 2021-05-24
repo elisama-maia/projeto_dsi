@@ -14,8 +14,13 @@ public class Projects {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dt_end;
 	
-	public Projects() {
-		
+	public Projects() {}
+	
+	public Projects(String nm_project, String ds_project, Date dt_start, Date dt_end) {
+		this.nm_project = nm_project;
+		this.ds_project = ds_project;
+		this.dt_start = dt_start;
+		this.dt_end = dt_end;
 	}
 	
 	public Projects(int cd_project, String nm_project, String ds_project, Date dt_start, Date dt_end) {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atualize seu projeto</title>
+</head>
+<body>
+	<h1>Atualize o seu projeto</h1>
+	<form action="#" th:action="@{'/upd/' + ${cd_project}}" method=post>
+		 <label for="name">Nome do Projeto:</label>
+  		 <input type="text" th:field="${antigo.nm_project}" name="name" id="name">
+  		 <label for="description">Descrição</label>
+  		 <input type="text" th:field="${antigo.ds_project}" name="description" id="description">
+  		 <label for="start">Início:</label>
+  		 <input type="date" th:field="${antigo.dt_start}" name="dt_start" id="start">
+  		 <label for="end">Término:</label>
+  		 <input type="date" th:field="${antigo.dt_end}" name="dt_end" id="end">
+  		 <input type="submit" value="Atualizar">
+	</form>
+</body>
+</html>
