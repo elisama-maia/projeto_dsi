@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atualize a sua Tarefa</title>
+</head>
+<body>
+	<h1>Atualize a sua Tarefa</h1>
+	<form action="#" th:action="@{'/upd/task/' + ${cd_task}}" method=post>
+		 <label for="nameTask">Nome da Tarefa:</label>
+  		 <input type="text" th:field="${antigo.nm_task}" name="nameTask" id="nameTask">
+  		 <label for="descriptionTask">Descrição</label>
+  		 <input type="text" th:field="${antigo.ds_task}" name="descriptionTask" id="descriptionTask">
+  		 <label for="startTask">Início:</label>
+  		 <input type="date" th:field="${antigo.dt_start}" name="dt_startTask" id="startTask">
+  		 <label for="endTask">Término:</label>
+  		 <input type="date" th:field="${antigo.dt_end}" name="dt_endTask" id="endTask">
+  		 <label for="status">Status</label>
+  		 <input type="text" th:field="${antigo.ds_status}" name="status" id="status">
+  		 <label for="priority">Prioridade</label>
+  		 <input type="text" th:field="${antigo.ds_priority}" name="priority" id="priority">
+  		 <input type="submit" value="Atualizar">
+	</form>
+</body>
+</html>

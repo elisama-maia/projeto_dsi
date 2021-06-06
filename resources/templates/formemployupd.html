@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atualize o empregado</title>
+</head>
+<body>
+	<h1>Atualize o empregado</h1>
+	<form action="#" th:action="@{'/upd/employ/' + ${cd_employee}}" method=post>
+		 <label for="name">Nome do Projeto:</label>
+  		 <input type="text" th:field="${antigo.nm_employee}" name="name" id="name">
+  		 <input type="submit" value="Atualizar">
+	</form>
+</body>
+</html>

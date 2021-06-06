@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gerenciar Projeto</title>
+<title>Gerenciar tarefa</title>
 </head>
 <body>
 	<table class="table table-striped table-primary">
@@ -14,22 +14,26 @@
             	<td><b>DESCRIÇÃO</b> </td>
             	<td><b>DATA DE INICIO</b> </td>
             	<td><b>DATA DE TERMINO</b> </td>
+            	<td><b>STATUS</b> </td>
+            	<td><b>PRIORIDADE</b> </td>
         	</tr>
     	</thead>
     	<tbody>
-        	<tr th:each="proj : ${projects}">
-            	<td th:text="${proj.cd_project}"></td>
-            	<td th:text="${proj.nm_project}"></td>
-            	<td th:text="${proj.ds_project}"></td>
-            	<td th:text="${proj.dt_start}"></td>
-            	<td th:text="${proj.dt_end}"></td>
+        	<tr th:each="task : ${tasks}">
+            	<td th:text="${task.cd_task}"></td>
+            	<td th:text="${task.nm_task}"></td>
+            	<td th:text="${task.ds_task}"></td>
+            	<td th:text="${task.dt_start}"></td>
+            	<td th:text="${task.dt_end}"></td>
+            	<td th:text="${task.ds_status}"></td>
+            	<td th:text="${task.ds_priority}"></td>
             	<td>
-            		<a th:href="@{'upd/' + ${proj.cd_project}}">
+            		<a th:href="@{'upd/task/' + ${task.cd_task}}">
             			Editar
             		</a>
             	</td>
             	<td> 
-            		<form th:action="@{'apagar/' + ${proj.cd_project}}" method=post>
+            		<form th:action="@{'apagar/task/' + ${task.cd_task}}" method=post>
             			<input type="submit" value="X">
             		</form>
             	</td>

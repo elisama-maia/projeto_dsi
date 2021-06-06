@@ -1,11 +1,15 @@
 package com.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Projects {
 	
+	@Id
 	private int cd_project;
 	private String nm_project;
 	private String ds_project;
@@ -13,6 +17,12 @@ public class Projects {
 	private Date dt_start;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dt_end;
+	
+	@MappedCollection(keyColumn = "cd_project", idColumn = "cd_project")
+	private Set<Employees> employees;
+	
+	@MappedCollection(keyColumn = "cd_project", idColumn = "cd_project")
+	private Set<Tasks> tasks;
 	
 	public Projects() {}
 	

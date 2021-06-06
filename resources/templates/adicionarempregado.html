@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastre o empregado</title>
+</head>
+<body>
+	<h1>Cadastre o empregado</h1>
+	<form action="#" th:action="@{/addemployee}" method=post th:object="${employee}">
+		 <label for="nameEmployee">Nome do Empregado:</label>
+  		 <input type="text" th:field="*{nm_employee}" name="nameEmployee" id="nameEmployee">
+  		 <input type="submit" value="Cadastrar">
+	</form>
+</body>
+</html>

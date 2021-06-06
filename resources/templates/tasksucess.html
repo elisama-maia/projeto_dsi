@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sucesso</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<div th:text="'nome da tarefa : ' + ${task.nm_task} "></div>
+   	<div th:text="'descrição : ' + ${task.ds_task} "></div>
+   	<div th:text="'data de inicio : ' + ${task.dt_start} "></div>
+   	<div th:text="'data de termino : ' + ${task.dt_end} "></div>
+   	<div th:text="'Status : ' + ${task.ds_status} "></div>
+   	<div th:text="'Prioridade : ' + ${task.ds_priority} "></div>
+   	<a th:href="@{/addtask}">Voltar</a>
+</body>
+</html>

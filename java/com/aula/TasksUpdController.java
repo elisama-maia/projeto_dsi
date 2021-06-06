@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.model.Tasks;
-import com.model.TasksService;
+import com.model.Projects;
+import com.model.ProjectsService;
 
 @Controller
-public class ProjectsUpdController {
+public class TasksUpdController {
 
 	@Autowired
 	private ApplicationContext context;
@@ -30,20 +30,20 @@ public class ProjectsUpdController {
     binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd"), true));
     }
 	
-	@GetMapping("/upd/task/{cd_task}")
-    public String updateForm(@PathVariable("cd_task") int cd_task, Model model){
-		TasksService tdao = context.getBean(TasksService.class);
-		Map<String,Object> antigo = tdao.getTask(cd_task);
-		Tasks task = new Tasks((String)antigo.get("nm_project"),(String)antigo.get("ds_project"),(Date)antigo.get("dt_start"),(Date)antigo.get("dt_end"),(String)antigo.get("ds_status"),(String)antigo.get("ds_priority"));
-		model.addAttribute("antigo",task);
-		model.addAttribute("cd_task",cd_task);
-		return "formtaskupd";
+	@GetMapping("/upd/{cd_project}")
+    public String updateForm(@PathVariable("cd_project") int cd_project, Model model){
+		ProjectsService pdao = context.getBean(ProjectsService.class);
+		Map<String,Object> antigo = pdao.getProject(cd_project);
+		Projects proj = new Projects((String)antigo.get("nm_project"),(String)antigo.get("ds_project"),(Date)antigo.get("dt_start"),(Date)antigo.get("dt_end"));
+		model.addAttribute("antigo",proj);
+		model.addAttribute("cd_project",cd_project);
+		return "formprojupd";
     }
 	
-	@PostMapping("/upd/task/{cd_task}")
-	public String update(@PathVariable("cd_task") int cd_task,@ModelAttribute Tasks tas, Model model) {
-		TasksService tdao = context.getBean(TasksService.class);
-		tdao.updateTask(cd_task, tas);
-		return "redirect:/addtasks";
+	@PostMapping("/upd/{cd_project}")
+	public String update(@PathVariable("cd_project") int cd_project,@ModelAttribute Projects proj, Model model) {
+		ProjectsService pdao = context.getBean(ProjectsService.class);
+		pdao.updateProject(cd_project, proj);
+		return "redirect:/addprojects";
 	}
 }

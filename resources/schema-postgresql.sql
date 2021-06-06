@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS employees (
     CONSTRAINT fk_projects
         FOREIGN KEY(cd_project)
             REFERENCES projects(cd_project)
-            ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tasks (
@@ -28,10 +27,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     ds_priority VARCHAR(40),
     CONSTRAINT fk_project
         FOREIGN KEY(cd_project)
-            REFERENCES projects(cd_project)
-            ON DELETE CASCADE,
+            REFERENCES projects(cd_project),
     CONSTRAINT fk_employee
         FOREIGN KEY(cd_employee)
             REFERENCES employees(cd_employee)
-            ON DELETE CASCADE
 );

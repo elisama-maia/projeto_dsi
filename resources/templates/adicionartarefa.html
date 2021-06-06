@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crie a tarefa</title>
+</head>
+<body>
+	<h1>Cria a tarefa</h1>
+	<form action="#" th:action="@{/addtask}" method=post th:object="${task}">
+		 <label for="name">Nome da Tarefa: </label>
+  		 <input type="text" th:field="*{nm_task}" name="name" id="name">
+  		 <label for="description">Descrição: </label>
+  		 <input type="text" th:field="*{ds_task}" name="description" id="description">
+  		 <label for="start">Início: </label>
+  		 <input type="date" th:field="*{dt_start}" name="dt_start" id="start">
+  		 <label for="end">Término: </label>
+  		 <input type="date" th:field="*{dt_end}" name="dt_end" id="end">
+  		 <label for="description">Status: </label>
+  		 <input type="text" th:field="*{ds_status}" name="descriptionStatus" id="descriptionStatus">
+  		 <label for="description">Prioridade: </label>
+  		 <input type="text" th:field="*{ds_priority}" name="descriptionPriority" id="descriptionPriority">
+  		 <input type="submit" value="Cadastrar">
+	</form>
+</body>
+</html>
