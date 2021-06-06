@@ -57,7 +57,7 @@ public class EmployeesController {
 		return "gerenciarempregado";
 	}
 	
-	@PostMapping("/apagar/{cd_employee}")
+	@PostMapping("/apagar/employ/{cd_employee}")
 	public String deletar(@PathVariable("cd_employee") int cd_employee,Model model) {
 		EmployeesService edao = context.getBean(EmployeesService.class);
 		edao.deleteEmployee(cd_employee);
