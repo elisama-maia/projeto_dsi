@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Empregado Cadastrado</title>
+
+<link rel="stylesheet" th:href=@{css/main.css}>
 </head>
 <body>
-	<h1 th:text="${titulo}"></h1>
-	<div th:text="'Nome do empregado: ' + ${employ.nm_employee} "></div>
-   	<div th:text="'Id do empregado: ' + ${employ.cd_employee} "></div>
-   	<a th:href="@{/addemployee}">Voltar</a>
+	<div id="container">
+		<div class="top">
+			<h1 class="name">Gerenciamento de Projetos</h1>
+			<a class="backbtn" th:href="@{/addemployee}">Voltar</a>
+		</div>
+		<main>
+			<h1 th:text="${titulo}"></h1>
+			<div class="div-sucess" th:text="'Nome do empregado: ' + ${employ.nm_employee} "></div>
+	   	</main>
+		<footer>
+			<p>© 2021 Project Team: Elisama Maia, Michelle Hannickel, Sabrina Duarte.</p>
+		</footer>
+	</div>
 </body>
 </html>

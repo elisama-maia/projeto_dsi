@@ -4,15 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sucesso</title>
+
+<link rel="stylesheet" th:href=@{css/main.css}>
 </head>
 <body>
-	<h1 th:text="${titulo}"></h1>
-	<div th:text="'nome da tarefa : ' + ${task.nm_task} "></div>
-   	<div th:text="'descrição : ' + ${task.ds_task} "></div>
-   	<div th:text="'data de inicio : ' + ${task.dt_start} "></div>
-   	<div th:text="'data de termino : ' + ${task.dt_end} "></div>
-   	<div th:text="'Status : ' + ${task.ds_status} "></div>
-   	<div th:text="'Prioridade : ' + ${task.ds_priority} "></div>
-   	<a th:href="@{/addtask}">Voltar</a>
+<div id="container">
+		<div class="top">
+			<h1 class="name">Gerenciamento de Projetos</h1>
+			<a class="backbtn" th:href="@{/addemployee}">Voltar</a>
+		</div>
+		<main>
+		<h1 th:text="${titulo}"></h1>
+		<div class="div-sucess" th:text="'nome da tarefa : ' + ${task.nm_task} "></div>
+	   	<div class="div-sucess" th:text="'descrição : ' + ${task.ds_task} "></div>
+	   	<div class="div-sucess" th:text="'data de inicio : ' + ${task.dt_start} "></div>
+	   	<div class="div-sucess" th:text="'data de termino : ' + ${task.dt_end} "></div>
+	   	<div class="div-sucess" th:text="'Status : ' + ${task.ds_status} "></div>
+	   	<div class="div-sucess" th:text="'Prioridade : ' + ${task.ds_priority} "></div>
+	   	</main>
+		<footer>
+			<p>© 2021 Project Team: Elisama Maia, Michelle Hannickel, Sabrina Duarte.</p>
+		</footer>
+	</div>
 </body>
 </html>
