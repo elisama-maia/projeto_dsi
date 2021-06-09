@@ -24,15 +24,17 @@ public class TasksDAO {
 	}
 	
 	public void insertTasks(Tasks task) {
-		String sql = "INSERT INTO tasks(nm_task,ds_task,dt_start,dt_end,ds_status,ds_priority)" +
-					 " VALUES (?,?,?,?,?,?)";
-		Object[] obj = new Object[6];
-		obj[0] = task.getNm_task();
-		obj[1] = task.getDs_task();
-		obj[2] = task.getDt_start();
-		obj[3] = task.getDt_end();
-		obj[4] = task.getDs_status();
-		obj[5] = task.getDs_priority();
+		String sql = "INSERT INTO tasks(cd_project, cd_employee,nm_task,ds_task,dt_start,dt_end,ds_status,ds_priority)" +
+					 " VALUES (?,?,?,?,?,?,?,?)";
+		Object[] obj = new Object[8];
+		obj[0] = task.getCd_project();
+		obj[1] = task.getCd_employee();
+		obj[2] = task.getNm_task();
+		obj[3] = task.getDs_task();
+		obj[4] = task.getDt_start();
+		obj[5] = task.getDt_end();
+		obj[6] = task.getDs_status();
+		obj[7] = task.getDs_priority();
 		jdbc.update(sql, obj);
 	}
 	
@@ -55,9 +57,9 @@ public class TasksDAO {
     }
     
     public void updateTask(int cd_task,Tasks task) {
-    	String sql = "UPDATE tasks SET nm_task = ?, ds_task = ?, dt_start = ?, dt_end = ?, ds_status = ?, ds_priority = ? WHERE cd_task = ?";
+    	String sql = "UPDATE tasks SET cd_project = ?, cd_employee = ?, nm_task = ?, ds_task = ?, dt_start = ?, dt_end = ?, ds_status = ?, ds_priority = ? WHERE cd_task = ?";
     	 jdbc.update(sql, new Object[]{
-    			 task.getNm_task(), task.getDs_task(), task.getDt_start(), task.getDt_end(), task.getDs_status(), task.getDs_priority(),cd_task
+    			 task.getCd_project(), task.getCd_employee(), task.getNm_task(), task.getDs_task(), task.getDt_start(), task.getDt_end(), task.getDs_status(), task.getDs_priority(),cd_task
          });
     }
 }

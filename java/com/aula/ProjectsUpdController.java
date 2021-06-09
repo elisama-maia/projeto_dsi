@@ -34,7 +34,7 @@ public class ProjectsUpdController {
     public String updateForm(@PathVariable("cd_task") int cd_task, Model model){
 		TasksService tdao = context.getBean(TasksService.class);
 		Map<String,Object> antigo = tdao.getTask(cd_task);
-		Tasks task = new Tasks((String)antigo.get("nm_project"),(String)antigo.get("ds_project"),(Date)antigo.get("dt_start"),(Date)antigo.get("dt_end"),(String)antigo.get("ds_status"),(String)antigo.get("ds_priority"));
+		Tasks task = new Tasks((int)antigo.get("cd_project"),(int)antigo.get("cd_employee"),(String)antigo.get("nm_project"),(String)antigo.get("ds_project"),(Date)antigo.get("dt_start"),(Date)antigo.get("dt_end"),(String)antigo.get("ds_status"),(String)antigo.get("ds_priority"));
 		model.addAttribute("antigo",task);
 		model.addAttribute("cd_task",cd_task);
 		return "formtaskupd";

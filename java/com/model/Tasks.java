@@ -9,6 +9,7 @@ public class Tasks {
 	
 	@Id
 	private int cd_task;
+	private int cd_project, cd_employee;
 	private String nm_task;
 	private String ds_task;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -20,7 +21,10 @@ public class Tasks {
 	
 	public Tasks() {}
 
-	public Tasks(String nm_task, String ds_task, Date dt_start, Date dt_end, String ds_status, String ds_priority) {
+	public Tasks(int cd_project, int cd_employee, String nm_task, String ds_task, Date dt_start,
+			Date dt_end, String ds_status, String ds_priority) {
+		this.cd_project = cd_project;
+		this.cd_employee = cd_employee;
 		this.nm_task = nm_task;
 		this.ds_task = ds_task;
 		this.dt_start = dt_start;
@@ -28,10 +32,11 @@ public class Tasks {
 		this.ds_status = ds_status;
 		this.ds_priority = ds_priority;
 	}
-	
-	public Tasks(int cd_task, String nm_task, String ds_task, Date dt_start, Date dt_end, String ds_status,
-			String ds_priority) {
+	public Tasks(int cd_task, int cd_project, int cd_employee, String nm_task, String ds_task, Date dt_start,
+			Date dt_end, String ds_status, String ds_priority) {
 		this.cd_task = cd_task;
+		this.cd_project = cd_project;
+		this.cd_employee = cd_employee;
 		this.nm_task = nm_task;
 		this.ds_task = ds_task;
 		this.dt_start = dt_start;
@@ -95,5 +100,20 @@ public class Tasks {
 	public void setDs_priority(String ds_priority) {
 		this.ds_priority = ds_priority;
 	}
-	
+
+	public int getCd_project() {
+		return cd_project;
+	}
+
+	public void setCd_project(int cd_project) {
+		this.cd_project = cd_project;
+	}
+
+	public int getCd_employee() {
+		return cd_employee;
+	}
+
+	public void setCd_employee(int cd_employee) {
+		this.cd_employee = cd_employee;
+	}
 }

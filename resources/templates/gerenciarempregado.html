@@ -31,6 +31,7 @@
 		    	<thead class="ttop">
 		        	<tr>
 		            	<td><b> ID</b></td>
+		            	<td><b>ID DO PROJETO</b> </td>
 		            	<td><b>NOME</b> </td>
 		            	<td><b>EDITAR</b> </td>
 						<td><b>DELETAR</b> </td>
@@ -39,6 +40,7 @@
 		    	<tbody>
 		        	<tr th:each="employ : ${employees}">
 		            	<td th:text="${employ.cd_employee}"></td>
+		            	<td th:text="${employ.cd_project}"></td>
 		            	<td th:text="${employ.nm_employee}"></td>
 		            	<td>
 		            		<a th:href="@{'upd/employ/' + ${employ.cd_employee}}">

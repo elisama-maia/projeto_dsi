@@ -31,6 +31,8 @@
 		    	<thead class="ttop">
 		        	<tr>
 		            	<td><b> ID</b></td>
+		            	<td><b>ID DO PROJETO</b> </td>
+		            	<td><b>ID DO EMPREGADO</b> </td>
 		            	<td><b>NOME</b> </td>
 		            	<td><b>DESCRIÇÃO</b> </td>
 		            	<td><b>DATA DE INICIO</b> </td>
@@ -44,6 +46,8 @@
 		    	<tbody>
 		        	<tr th:each="task : ${tasks}">
 		            	<td th:text="${task.cd_task}"></td>
+		            	<td th:text="${task.cd_employee}"></td>
+		            	<td th:text="${task.cd_project}"></td>
 		            	<td th:text="${task.nm_task}"></td>
 		            	<td th:text="${task.ds_task}"></td>
 		            	<td th:text="${task.dt_start}"></td>

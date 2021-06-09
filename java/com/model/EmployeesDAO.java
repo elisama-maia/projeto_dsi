@@ -24,10 +24,11 @@ public class EmployeesDAO {
 	}
 	
 	public void insertEmployees(Employees employee) {
-		String sql = "INSERT INTO employees(nm_employee)" +
-					 " VALUES (?)";
-		Object[] obj = new Object[1];
+		String sql = "INSERT INTO employees(nm_employee,cd_project)" +
+					 " VALUES (?,?)";
+		Object[] obj = new Object[2];
 		obj[0] = employee.getNm_employee();
+		obj[1] = employee.getCd_project();
 		jdbc.update(sql, obj);
 	}
 	
@@ -50,9 +51,9 @@ public class EmployeesDAO {
     }
     
     public void updateEmployee(int cd_employee,Employees employ) {
-    	String sql = "UPDATE employees SET nm_employee = ? WHERE cd_employee = ?";
+    	String sql = "UPDATE employees SET nm_employee = ?, cd_project = ? WHERE cd_employee = ?";
     	 jdbc.update(sql, new Object[]{
-         		employ.getNm_employee(), cd_employee
+         		employ.getNm_employee(), employ.getCd_project(), cd_employee
          });
     }
 }

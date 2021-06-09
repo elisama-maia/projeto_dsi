@@ -43,7 +43,7 @@ public class EmployeesController {
     public String read(@PathVariable("cd_employee") int cd_employee, Model model){
 		EmployeesService edao = context.getBean(EmployeesService.class);
 		Map<String,Object> employee = edao.getEmployee(cd_employee);
-		Employees employ = new Employees((String)employee.get("nm_employee"));
+		Employees employ = new Employees((int)employee.get("cd_project"),(String)employee.get("nm_employee"));
 		model.addAttribute("employ",employ);
 		model.addAttribute("titulo", "DESCRIÇÃO DO EMPREGADO CADASTRADO" + cd_employee);
 		return "employeesucess";

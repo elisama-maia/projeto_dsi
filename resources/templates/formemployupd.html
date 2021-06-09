@@ -30,6 +30,8 @@
 			<form action="#" th:action="@{'/upd/employ/' + ${cd_employee}}" method=post>
 				 <label for="name">Nome do Projeto:</label>
 		  		 <input type="text" th:field="${antigo.nm_employee}" name="name" id="name">
+		  		 <label for="idProjeto">Id do projeto:</label>
+		  		 <input type="number" th:field="*{antigo.cd_project}" name="idProjeto" id="idProjeto">
 		  		 <input type="submit" value="ATUALIZAR">
 			</form>
 		</div>

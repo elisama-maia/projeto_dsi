@@ -24,7 +24,7 @@ public class EmployeesUpdController {
     public String updateForm(@PathVariable("cd_employee") int cd_employee, Model model){
 		EmployeesService edao = context.getBean(EmployeesService.class);
 		Map<String,Object> antigo = edao.getEmployee(cd_employee);
-		Employees employ = new Employees((String)antigo.get("nm_employee"));
+		Employees employ = new Employees((int)antigo.get("cd_project"),(String)antigo.get("nm_employee"));
 		model.addAttribute("antigo",employ);
 		model.addAttribute("cd_employee",cd_employee);
 		return "formemployupd";

@@ -27,6 +27,7 @@
 			<a class="backbtn" th:href="@{/}">Voltar</a>
 	    </div> 
 		<h1>Crie a tarefa</h1>
+		<p style="margin-left: 1%">Lembre-se de adicionar um id de projeto e empregado existente!</p>
 		<div class="form__area">
 			<form action="#" th:action="@{/addtask}" method=post th:object="${task}">
 				 <label for="name">Nome da Tarefa: </label>
@@ -41,6 +42,10 @@
 		  		 <input type="text" th:field="*{ds_status}" name="descriptionStatus" id="descriptionStatus">
 		  		 <label for="description">Prioridade: </label>
 		  		 <input type="text" th:field="*{ds_priority}" name="descriptionPriority" id="descriptionPriority">
+		  		 <label for="id-projeto">Id do projeto:</label>
+		  		 <input type="number" th:field="*{cd_project}" name="id-projeto" id="id-projeto">
+		  		 <label for="id-empr">Id do Empregado:</label>
+		  		 <input type="number" th:field="*{cd_employee}" name="id-empr" id="id-empr">
 		  		 <input type="submit" value="CADASTRAR">
 			</form>
 		</div>

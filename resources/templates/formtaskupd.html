@@ -40,6 +40,10 @@
 		  		 <input type="text" th:field="${antigo.ds_status}" name="status" id="status">
 		  		 <label for="priority">Prioridade</label>
 		  		 <input type="text" th:field="${antigo.ds_priority}" name="priority" id="priority">
+		  		 <label for="id-projeto">Id do projeto:</label>
+		  		 <input type="number" th:field="*{antigo.cd_project}" name="id-projeto" id="id-projeto">
+		  		 <label for="id-empr">Id do Empregado:</label>
+		  		 <input type="number" th:field="*{antigo.cd_employee}" name="id-empr" id="id-empr">
 		  		 <input type="submit" value="ATUALIZAR">
 			</form>
 		</div>

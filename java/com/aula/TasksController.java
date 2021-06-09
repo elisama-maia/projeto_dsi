@@ -53,7 +53,7 @@ public class TasksController {
     public String read(@PathVariable("cd_task") int cd_task, Model model){
 		TasksService tdao = context.getBean(TasksService.class);
 		Map<String,Object> task = tdao.getTask(cd_task);
-		Tasks tas = new Tasks((String)task.get("nm_project"),(String)task.get("ds_task"),
+		Tasks tas = new Tasks((int)task.get("cd_project"),(int)task.get("cd_employee"),(String)task.get("nm_task"),(String)task.get("ds_task"),
 				(Date)task.get("dt_start"),(Date)task.get("dt_end"),(String)task.get("ds_status"),(String)task.get("ds_priority"));
 		model.addAttribute("tas",tas);
 		model.addAttribute("titulo", "DESCRIÇÃO DA TAREFA CADASTRADA" + cd_task);
